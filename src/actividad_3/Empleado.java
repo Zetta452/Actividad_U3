@@ -26,7 +26,7 @@ abstract public class Empleado {
 
         //calular la retencion por salud y pension 
         //la retencion de la salud y a pension va hacer del 4%
-        double saludPension = salairioBruto * 0.4;
+        double saludPension = salairioBruto * 0.04;
 
         //retorna el valor de la reduccion de pension
         return saludPension;
@@ -36,7 +36,7 @@ abstract public class Empleado {
 
         //almacena el valor de deduccion por ARL
         //la reduccion por arl es de 5%
-        double arl = salarioBruto * 0.5;
+        double arl = salarioBruto * 0.05;
 
         //retorna el valor calcualdo de la ARL
         return arl;
@@ -53,4 +53,5 @@ abstract public class Empleado {
         //retorno del salario neto
         return neto;
     }
+   public abstract void imprimir();
 }
