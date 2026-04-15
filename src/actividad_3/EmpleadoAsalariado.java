@@ -12,6 +12,7 @@ public class EmpleadoAsalariado extends Empleado {
     public EmpleadoAsalariado(String nombre, int tiempoEmpresa, double salarioMensual) {
         super(nombre, tiempoEmpresa);
         this.salarioMensual = salarioMensual;
+   
     }
 
     @Override
@@ -19,23 +20,22 @@ public class EmpleadoAsalariado extends Empleado {
         //los empleados a salaridos poseen un bono de alimentacion con un valor de 1.000.000
         //retorna el valor de su salario bruto
         //vaiable para guardar el beneficio de antiguedad
-
-        //comprobar si posee mas de 5 años de permanecia en la empresa
-        if (tiempoEmpresa > 5) {
-            //si cumple con la condicion obtien un bono del 10% por antiguedad
-            bonoAntiguedad= salarioMensual * 0.10;
+        if (super.tiempoEmpresa > 5 ){
+            this.bonoAntiguedad = (this.salarioMensual * 0.1);
         }
-        return this.salarioMensual + bonoAlimentacion + bonoAntiguedad;
+        
+        return this.bonoAntiguedad + this.salarioMensual + this.bonoAlimentacion; 
     }
 
     @Override
     public void imprimir() {
+        
         System.out.println("Empleado a salariado:");
         System.out.println("Nombre = " + this.nombre);
         System.out.println("_____________________________________________");
         System.out.println("Salaro fijo mensual = $" + this.salarioMensual);
         if (tiempoEmpresa > 5) {
-            System.out.println("bono antiguedad = $" + bonoAntiguedad );
+            System.out.println("bono antiguedad = $" + this.bonoAntiguedad );
         }
         System.out.println("Bono de alimentacion = $" + this.bonoAlimentacion );
         System.out.println("________________________________________________");

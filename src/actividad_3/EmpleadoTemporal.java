@@ -19,5 +19,18 @@ public class EmpleadoTemporal extends Empleado {
         return salarioMensual;
     }
 
+    @Override
+    public void imprimir() {
+        System.out.println("Empleado temporal");
+        System.out.println("Nombre = " + nombre);
+        System.out.println("______________________________");
+        System.out.println("salario mensual = $" + salarioMensual );
+        System.out.println("ARL  = -$" + retencionarl(salarioMensual) );
+        System.out.println("SALUD = -$" + retencionSalud(salarioMensual) );
+        System.out.println("_______________________________");
+        System.out.println("Salario neto a pagar = $" + salarioNeto());
+        
+    }
+
     
 }
